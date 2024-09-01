@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,12 +20,15 @@
             background-color: #1DBF73;
         }
 
-        .navbar-brand, .nav-link {
+        .navbar-brand,
+        .nav-link {
             color: #fff !important;
+            font-size: 20px;
         }
 
         .navbar-brand {
             font-weight: bold;
+            font-size: 40px;
         }
 
         .nav-link:hover {
@@ -32,12 +36,16 @@
         }
 
         /* Header */
-        h1, h2 {
+        h1,
+        h2 {
             text-align: center;
             color: #333;
             margin-top: 20px;
             font-weight: bold;
+            font-size: 45px;
+            padding: 10px;
         }
+
 
         /* Table Styling */
         table {
@@ -47,7 +55,8 @@
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
-        th, td {
+        th,
+        td {
             padding: 12px;
             text-align: center;
             border-bottom: 1px solid #ddd;
@@ -66,6 +75,15 @@
             background-color: #e2e2e2;
         }
 
+        /* Responsive Table */
+        @media (max-width: 768px) {
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+        }
+
         /* Footer Styling */
         footer {
             background-color: #1DBF73;
@@ -76,35 +94,45 @@
         }
 
         /* Image Slider */
-       .carousel-inner {
-    position: relative;
-}
+        .carousel-inner {
+            position: relative;
+        }
 
-.carousel-inner img {
-    width: 100%;
-    height: 600px;
-    object-fit: cover;
-    display: block;
-}
+        .carousel-inner img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            display: block;
+        }
 
-.carousel-inner::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Adjust the opacity as needed */
-    pointer-events: none; /* Ensures the overlay does not interfere with clicks */
-}
-
+        .carousel-inner::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            pointer-events: none;
+        }
 
         /* Section Spacing */
         section {
-            padding: 60px 0;
+            padding: 40px 0;
         }
 
-        /* Contact Form */
+        @media (max-width: 768px) {
+            section {
+                padding: 20px 0;
+            }
+        }
+
+        /* Contact Form and Map Styling */
+        .contact-form,
+        .map-responsive {
+            height: 500px;
+        }
+
         .contact-form {
             background: #fff;
             padding: 20px;
@@ -137,14 +165,29 @@
         .contact-form button:hover {
             background-color: #17a869;
         }
+
+        .map-responsive {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .map-responsive iframe {
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+        }
     </style>
 </head>
+
 <body>
     <!-- Navigation Menu -->
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">GPS Karshat Jai</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -169,9 +212,9 @@
     <!-- Image Slider -->
     <div id="home" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
-            <button type="button" data-bs-target="#home" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#home" data-bs-slide-to="0" class="active" aria-current="true"
+                aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#home" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#home" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
@@ -180,7 +223,6 @@
             <div class="carousel-item">
                 <img src="1.jpg" class="d-block w-100" alt="Slide 2">
             </div>
-            
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#home" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -195,208 +237,200 @@
     <!-- About Section -->
     <section id="about" class="container">
         <h2>About GPS Karshat Jai</h2>
-        <p>GPS Karshat Jai is a government primary school dedicated to providing quality education to children in our community. We focus on nurturing young minds, fostering creativity, and instilling moral values. Our experienced teachers and staff are committed to creating a safe and inclusive environment where every student can thrive. At GPS Karshat Jai, we believe in the holistic development of children, encouraging them to excel academically while also engaging in extracurricular activities that promote teamwork and leadership.</p>
+        <div class="row">
+            <div class="col-lg-10 offset-lg-1">
+                <p style="font-size: 18px; line-height: 1.7rem; text-align: center;">GPS Karshat Jai is a government primary school dedicated to providing quality education to children in
+                    our community. We focus on nurturing young minds, fostering creativity, and instilling moral values.
+                    Our experienced teachers and staff are committed to creating a safe and inclusive environment where
+                    every student can thrive. At GPS Karshat Jai, we believe in the holistic development of children,
+                    encouraging them to excel academically while also engaging in extracurricular activities that
+                    promote teamwork and leadership.</p>
+            </div>
+        </div>
     </section>
 
     <!-- Results Section -->
-    <section id="results" class="container">
-        <h2>Class KG Results</h2>
-        <table class="table table-striped table-hover">
-            <thead>
-                <tr>
-                    <th>Class</th>
-                    <th>Position</th>
-                    <th>Student Name</th>
-                    <th>Total Marks</th>
-                    <th>Obtained Marks</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>KG</td>
-                    <td>1st</td>
-                    <td>Zeenat bibi</td>
-                    <td>400</td>
-                    <td>315</td>
-                </tr>
-                <tr>
-                    <td>KG</td>
-                    <td>2nd</td>
-                    <td>Mohiba</td>
-                    <td>400</td>
-                    <td>302</td>
-                </tr>
-                <tr>
-                    <td>KG</td>
-                    <td>3rd</td>
-                    <td>Sakeena bibi</td>
-                    <td>400</td>
-                    <td>301</td>
-                </tr>
-
-
-
-                <tr>
-                    <td>1st</td>
-                    <td>1st</td>
-                    <td>Maryam</td>
-                    <td>650</td>
-                    <td>450</td>
-                </tr>
-                <tr>
-                    <td>1st</td>
-                    <td>2nd</td>
-                    <td>Sumaira</td>
-                    <td>650</td>
-                    <td>435</td>
-                </tr>
-                <tr>
-                    <td>1st</td>
-                    <td>3rd</td>
-                    <td>Hayat</td>
-                    <td>650</td>
-                    <td>430</td>
-                </tr>
-
-
-
-                <tr>
-                    <td>2nd</td>
-                    <td>1st</td>
-                    <td>M.sheer</td>
-                    <td>750</td>
-                    <td>468</td>
-                </tr>
-                <tr>
-                    <td>2nd</td>
-                    <td>2nd</td>
-                    <td>Bushra bibi</td>
-                    <td>750</td>
-                    <td>435</td>
-                </tr>
-                <tr>
-                    <td>2nd</td>
-                    <td>3rd</td>
-                    <td>Fazal Sheer</td>
-                    <td>750</td>
-                    <td>412</td>
-                </tr>
-
-                  
-
-               <tr>
-                    <td>3rd</td>
-                    <td>1st</td>
-                    <td></td>
-                    <td>750</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>3rd</td>
-                    <td>2nd</td>
-                    <td></td>
-                    <td>750</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>3rd</td>
-                    <td>3rd</td>
-                    <td></td>
-                    <td>750</td>
-                    <td></td>
-                </tr>
-
-
-
-                <tr>
-                    <td>4th</td>
-                    <td>1st</td>
-                    <td></td>
-                    <td>750</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>4th</td>
-                    <td>2nd</td>
-                    <td></td>
-                    <td>750</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>4th</td>
-                    <td>3rd</td>
-                    <td></td>
-                    <td>750</td>
-                    <td></td>
-                </tr>
-
-
-
-                <tr>
-                    <td>5th</td>
-                    <td>1st</td>
-                    <td>Jawad ullah</td>
-                    <td>750</td>
-                    <td>456</td>
-                </tr>
-                <tr>
-                    <td>5th</td>
-                    <td>2nd</td>
-                    <td>Kareshma bibi</td>
-                    <td>750</td>
-                    <td>388</td>
-                </tr>
-                <tr>
-                    <td>5th</td>
-                    <td>3rd</td>
-                    <td>Nasim Akhtar</td>
-                    <td>750</td>
-                    <td>376</td>
-                </tr>
-
-            </tbody>
-        </table>
-    </section>
-
+   <section id="results" class="container">
+    <h2>Results First Term 2024</h2>
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Class</th>
+                <th>Student Name</th>
+                <th>Total Marks</th>
+                <th>Obtained Marks</th>
+                <th>Position</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>KG</td>
+                <td>Zeenat Bibi</td>
+                <td>400</td>
+                <td>315</td>
+                <td>First</td>
+            </tr>
+            <tr>
+                <td>KG</td>
+                <td>Mohiba</td>
+                <td>400</td>
+                <td>302</td>
+                <td>Second</td>
+            </tr>
+            <tr>
+                <td>KG</td>
+                <td>Sakeena Bibi</td>
+                <td>400</td>
+                <td>301</td>
+                <td>Third</td>
+            </tr>
+            <tr>
+                <td>1st</td>
+                <td>Maryam</td>
+                <td>650</td>
+                <td>450</td>
+                <td>First</td>
+            </tr>
+            <tr>
+                <td>1st</td>
+                <td>Sumaira</td>
+                <td>650</td>
+                <td>435</td>
+                <td>Second</td>
+            </tr>
+            <tr>
+                <td>1st</td>
+                <td>Hayat</td>
+                <td>650</td>
+                <td>430</td>
+                <td>Third</td>
+            </tr>
+            <tr>
+                <td>2nd</td>
+                <td>M. Sheer</td>
+                <td>750</td>
+                <td>468</td>
+                <td>First</td>
+            </tr>
+            <tr>
+                <td>2nd</td>
+                <td>Bushra Bibi</td>
+                <td>750</td>
+                <td>435</td>
+                <td>Second</td>
+            </tr>
+            <tr>
+                <td>2nd</td>
+                <td>Fazal Sheer</td>
+                <td>750</td>
+                <td>412</td>
+                <td>Third</td>
+            </tr>
+            <tr>
+                <td>3rd</td>
+                <td></td>
+                <td>750</td>
+                <td></td>
+                <td>First</td>
+            </tr>
+            <tr>
+                <td>3rd</td>
+                <td></td>
+                <td>750</td>
+                <td></td>
+                <td>Second</td>
+            </tr>
+            <tr>
+                <td>3rd</td>
+                <td></td>
+                <td>750</td>
+                <td></td>
+                <td>Third</td>
+            </tr>
+            <tr>
+                <td>4th</td>
+                <td></td>
+                <td>750</td>
+                <td></td>
+                <td>First</td>
+            </tr>
+            <tr>
+                <td>4th</td>
+                <td></td>
+                <td>750</td>
+                <td></td>
+                <td>Second</td>
+            </tr>
+            <tr>
+                <td>4th</td>
+                <td></td>
+                <td>750</td>
+                <td></td>
+                <td>Third</td>
+            </tr>
+            <tr>
+                <td>5th</td>
+                <td>Jawad Ullah</td>
+                <td>750</td>
+                <td>456</td>
+                <td>First</td>
+            </tr>
+            <tr>
+                <td>5th</td>
+                <td>Kareshma Bibi</td>
+                <td>750</td                <td>388</td>
+                <td>Second</td>
+            </tr>
+            <tr>
+                <td>5th</td>
+                <td>Nasim Akhtar</td>
+                <td>750</td>
+                <td>376</td>
+                <td>Third</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
     <!-- Contact Section -->
     <section id="contact" class="container">
         <h2>Contact Us</h2>
         <div class="row">
-            <div class="col-md-8 offset-md-2">
+            <div class="col-md-6">
                 <div class="contact-form">
                     <h3>Get in Touch</h3>
-                    <form action="submit_form.php" method="post">
+                    <form>
                         <div class="mb-3">
-                            <label for="name" class="form-label">Name</label>
-                            <input type="text" class="form-control" id="name" name="name" required>
+                            <label for="name" class="form-label">Your Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Enter your name">
                         </div>
                         <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" required>
+                            <label for="email" class="form-label">Your Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter your email">
                         </div>
                         <div class="mb-3">
                             <label for="message" class="form-label">Message</label>
-                            <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                            <textarea class="form-control" id="message" rows="5" placeholder="Enter your message"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
                     </form>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="map-responsive">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3420006.032010387!2d71.58739542593192!3d35.34693258640671!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38eebc5795f3e9b5%3A0x27b1c3b999c9fede!2sShangla%20District%2C%20Khyber%20Pakhtunkhwa%2C%20Pakistan!5e0!3m2!1sen!2sbd!4v1630311118053!5m2!1sen!2sbd" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-   
-
-
-    <!-- Footer -->
     <footer>
-        <div class="container">
-            <p>&copy; 2024 GPS Karshat Jai. All rights reserved.</p>
-        </div>
+        <p>GPS Karshat Jai &copy; 2024. All rights reserved.</p>
     </footer>
 
-    <!-- Bootstrap JS and dependencies -->
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
